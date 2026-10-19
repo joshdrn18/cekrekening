@@ -9,7 +9,7 @@ const lists = {
   bank: [
     ['bca','BCA'],['bri','BRI'],['bni','BNI'],['mandiri','Mandiri'],['btn','BTN'],['cimb','CIMB Niaga'],['danamon','Danamon'],['permata','Permata Bank'],['ocbc','OCBC'],['panin','Panin Bank'],['mega','Bank Mega'],['bsi','Bank Syariah Indonesia'],['muamalat','Bank Muamalat'],['jago','Bank Jago'],['blu','blu by BCA Digital'],['neo','Bank Neo Commerce'],['seabank','SeaBank'],['maybank','Maybank'],['uob','UOB'],['dbs','DBS'],['hsbc','HSBC'],['citibank','Citibank']
   ],
-  ewallet: [['dana','DANA'],['ovo','OVO'],['gopay','GoPay'],['shopeepay','ShopeePay'],['linkaja','LinkAja']]
+  ewallet: [['dana','DANA'],['ovo','OVO'],['gopay','GoPay'],['gopaydriver','GoPay Driver'],['shopeepay','ShopeePay'],['linkaja','LinkAja'],['maxim','Maxim']]
 };
 function populate() {
   institutionSelect.innerHTML = '';
