@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <meta name="description" content="Cek nama rekening bank dan e-wallet melalui layanan verifikasi resmi.">
+  <title>Cek Rekening — Cek Nama Pemilik</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Cek Rekening beranda">
+        <span class="brand-mark">✓</span><span>cek<span class="brand-accent">rekening</span></span>
+      </a>
+      <span class="secure"><span class="dot"></span> API komunitas</span>
+    </header>
+
+    <section class="hero">
+      <div class="eyebrow"><span class="eyebrow-line"></span> VERIFIKASI TUJUAN TRANSFER</div>
+      <h1>Pastikan tujuan<br><span>transfer kamu.</span></h1>
+      <p class="hero-copy">Cek nama pemilik rekening bank dan e-wallet Indonesia langsung dari nomor tujuan. Hasil bergantung pada ketersediaan API gratis.</p>
+    </section>
+
+    <section class="panel" aria-labelledby="form-title">
+      <div class="panel-head">
+        <div>
+          <div class="step">01 / DETAIL REKENING</div>
+          <h2 id="form-title">Cek nama pemilik</h2>
+        </div>
+        <div class="panel-icon">⌁</div>
+      </div>
+
+      <form id="check-form">
+        <div class="field">
+          <label for="type">Jenis rekening</label>
+          <div class="segmented" role="group" aria-label="Jenis rekening">
+            <button type="button" class="segment active" data-type="bank" aria-pressed="true">Bank</button>
+            <button type="button" class="segment" data-type="ewallet" aria-pressed="false">E-wallet</button>
+          </div>
+          <input type="hidden" id="type" value="bank">
+        </div>
+
+        <div class="field">
+          <label for="institution">Pilih bank</label>
+          <div class="select-wrap">
+            <select id="institution" required>
+              <option value="">Pilih institusi</option>
+            </select>
+            <span class="select-chevron">⌄</span>
+          </div>
+          <p class="hint">Daftar pilihan bukan jaminan semua institusi didukung provider.</p>
+        </div>
+
+        <div class="field">
+          <label for="account-number">Nomor rekening / nomor e-wallet</label>
+          <input id="account-number" name="accountNumber" inputmode="numeric" autocomplete="off" maxlength="32" placeholder="Masukkan nomor tujuan" required>
+          <p class="hint">Masukkan nomor saja, tanpa spasi atau tanda baca.</p>
+        </div>
+
+        <button class="submit" type="submit" id="submit-button">
+          <span id="button-label">Cek nama rekening</span><span aria-hidden="true">↗</span>
+        </button>
+      </form>
+
+      <div id="result" class="result hidden" role="status" aria-live="polite"></div>
+      <div class="disclaimer"><span>ⓘ</span><p>Menggunakan API komunitas gratis yang bisa sewaktu-waktu berubah atau tidak tersedia. Selalu konfirmasi nama penerima di aplikasi bank sebelum transfer.</p></div>
+    </section>
+
+    <section class="trust-row">
+      <div><span class="trust-icon">⌑</span><span><strong>Data terlindungi</strong><small>Nomor tidak disimpan oleh web ini</small></span></div>
+      <div><span class="trust-icon">✓</span><span><strong>Hasil provider</strong><small>Respons dari provider</small></span></div>
+    </section>
+    <footer>© <span id="year"></span> cekrekening · Gunakan secara bertanggung jawab.</footer>
+  </main>
+  <script src="/app.js" defer></script>
+</body>
+</html>
