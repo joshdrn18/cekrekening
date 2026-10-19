@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#101a2e"><meta name="description" content="Periksa nama pemilik rekening bank dan e-wallet Indonesia.">
+  <title>CekRekening — Cek Nama Pemilik</title><link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main class="shell">
+    <header class="top"><div class="brand-mark">CR</div><div><div class="brand">CekRekening</div><div class="subbrand">CEK NAMA SEBELUM TRANSFER</div></div><span class="status-dot" title="Layanan"></span></header>
+    <section class="hero"><div class="eyebrow">LEBIH TELITI SEBELUM TRANSFER</div><h1>Cek nama pemilik</h1><p>Periksa nama rekening sebelum mengirim uang. Selalu cocokkan hasil dengan aplikasi bank Anda.</p></section>
+    <section class="panel">
+      <form id="checkForm">
+        <label>Jenis rekening</label>
+        <div class="segmented"><button type="button" class="segment active" data-type="bank">Bank</button><button type="button" class="segment" data-type="ewallet">E-wallet</button></div>
+        <label for="institution">Pilih <span id="kindLabel">bank</span></label>
+        <select id="institution" required></select>
+        <p class="hint">Daftar pilihan bukan jaminan semua institusi didukung provider.</p>
+        <label for="accountNumber">Nomor rekening / nomor e-wallet</label>
+        <input id="accountNumber" inputmode="numeric" autocomplete="off" maxlength="32" placeholder="Masukkan nomor saja" required pattern="[0-9]{5,32}">
+        <p class="hint">Masukkan nomor saja, tanpa spasi atau tanda baca.</p>
+        <button id="submitButton" class="submit" type="submit"><span>Cek nama rekening</span><span>↗</span></button>
+      </form>
+      <div id="result" class="result hidden" role="status" aria-live="polite"></div>
+      <div class="notice"><span>ⓘ</span><p>API komunitas dapat berubah atau tidak tersedia. Selalu konfirmasi nama penerima di aplikasi bank sebelum transfer.</p></div>
+    </section>
+    <footer>Made for safer transfers · Hasil bergantung pada ketersediaan provider</footer>
+  </main>
+  <script src="/app.js" defer></script>
+</body></html>
